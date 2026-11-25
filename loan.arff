@@ -1,0 +1,18 @@
+@relation loan
+@attribute Income {High,Medium,Low}
+@attribute CreditHistory {Good,Poor}
+@attribute Employment {Salaried,Self-employed}
+@attribute Approved {Yes,No}
+@data
+High,Good,Salaried,Yes
+High,Poor,Salaried,No
+High,Good,Self-employed,Yes
+Medium,Good,Salaried,Yes
+Medium,Poor,Self-employed,No
+Medium,Good,Self-employed,No
+Medium,Poor,Salaried,No
+Low,Good,Salaried,Yes
+Low,Poor,Self-employed,No
+Low,Poor,Salaried,No
+Low,Good,Self-employed,No
+High,Poor,Self-employed,Yes

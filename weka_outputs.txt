@@ -1,0 +1,578 @@
+== J48 unpruned -M 1 on 12 tuples
+J48 unpruned tree
+------------------
+
+CreditHistory = Good
+|   Employment = Salaried: Yes (3.0)
+|   Employment = Self-employed
+|   |   Income = High: Yes (1.0)
+|   |   Income = Medium: No (1.0)
+|   |   Income = Low: No (1.0)
+CreditHistory = Poor
+|   Income = High
+|   |   Employment = Salaried: No (1.0)
+|   |   Employment = Self-employed: Yes (1.0)
+|   Income = Medium: No (2.0)
+|   Income = Low: No (2.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	13
+
+== J48 default (pruned C=0.25 M=2) on 12 tuples
+J48 pruned tree
+------------------
+
+CreditHistory = Good
+|   Employment = Salaried: Yes (3.0)
+|   Employment = Self-employed: No (3.0/1.0)
+CreditHistory = Poor: No (6.0/1.0)
+
+Number of Leaves  : 	3
+
+Size of the tree : 	5
+
+== J48 default on credit-g (full data)
+J48 pruned tree
+------------------
+
+checking_status = A11
+|   foreign_worker = A201
+|   |   duration <= 11
+|   |   |   existing_credits <= 1
+|   |   |   |   property_magnitude = A121: good (8.0/1.0)
+|   |   |   |   property_magnitude = A122
+|   |   |   |   |   own_telephone = A191: bad (2.0)
+|   |   |   |   |   own_telephone = A192: good (4.0)
+|   |   |   |   property_magnitude = A123: good (2.0/1.0)
+|   |   |   |   property_magnitude = A124: bad (3.0)
+|   |   |   existing_credits > 1: good (14.0)
+|   |   duration > 11
+|   |   |   job = A171: bad (5.0/1.0)
+|   |   |   job = A172
+|   |   |   |   purpose = A40
+|   |   |   |   |   own_telephone = A191: bad (10.0/2.0)
+|   |   |   |   |   own_telephone = A192: good (2.0)
+|   |   |   |   purpose = A41: bad (1.0)
+|   |   |   |   purpose = A410: good (1.0)
+|   |   |   |   purpose = A42
+|   |   |   |   |   employment = A71: good (0.0)
+|   |   |   |   |   employment = A72: bad (3.0)
+|   |   |   |   |   employment = A73: good (4.0)
+|   |   |   |   |   employment = A74: good (1.0)
+|   |   |   |   |   employment = A75: good (2.0)
+|   |   |   |   purpose = A43
+|   |   |   |   |   existing_credits <= 1: bad (10.0/3.0)
+|   |   |   |   |   existing_credits > 1: good (2.0)
+|   |   |   |   purpose = A44: bad (1.0)
+|   |   |   |   purpose = A45: bad (1.0)
+|   |   |   |   purpose = A46: bad (1.0)
+|   |   |   |   purpose = A48: good (1.0)
+|   |   |   |   purpose = A49: good (3.0)
+|   |   |   job = A173
+|   |   |   |   other_parties = A101
+|   |   |   |   |   duration <= 30
+|   |   |   |   |   |   savings_status = A61
+|   |   |   |   |   |   |   credit_history = A30: bad (8.0/1.0)
+|   |   |   |   |   |   |   credit_history = A31: bad (6.0)
+|   |   |   |   |   |   |   credit_history = A32
+|   |   |   |   |   |   |   |   own_telephone = A191
+|   |   |   |   |   |   |   |   |   existing_credits <= 1
+|   |   |   |   |   |   |   |   |   |   property_magnitude = A121
+|   |   |   |   |   |   |   |   |   |   |   age <= 26: bad (5.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 26: good (2.0)
+|   |   |   |   |   |   |   |   |   |   property_magnitude = A122: bad (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   property_magnitude = A123
+|   |   |   |   |   |   |   |   |   |   |   credit_amount <= 1386: bad (3.0)
+|   |   |   |   |   |   |   |   |   |   |   credit_amount > 1386: good (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   property_magnitude = A124: good (2.0)
+|   |   |   |   |   |   |   |   |   existing_credits > 1: bad (3.0)
+|   |   |   |   |   |   |   |   own_telephone = A192: bad (5.0)
+|   |   |   |   |   |   |   credit_history = A33: bad (4.0)
+|   |   |   |   |   |   |   credit_history = A34: good (14.0/4.0)
+|   |   |   |   |   |   savings_status = A62
+|   |   |   |   |   |   |   credit_history = A30: good (0.0)
+|   |   |   |   |   |   |   credit_history = A31: good (1.0)
+|   |   |   |   |   |   |   credit_history = A32: bad (3.0)
+|   |   |   |   |   |   |   credit_history = A33: good (0.0)
+|   |   |   |   |   |   |   credit_history = A34: good (2.0)
+|   |   |   |   |   |   savings_status = A63: good (4.0/1.0)
+|   |   |   |   |   |   savings_status = A64: good (4.0)
+|   |   |   |   |   |   savings_status = A65
+|   |   |   |   |   |   |   existing_credits <= 1
+|   |   |   |   |   |   |   |   own_telephone = A191: bad (9.0/1.0)
+|   |   |   |   |   |   |   |   own_telephone = A192: good (4.0/1.0)
+|   |   |   |   |   |   |   existing_credits > 1: good (2.0)
+|   |   |   |   |   duration > 30: bad (30.0/3.0)
+|   |   |   |   other_parties = A102: bad (7.0/1.0)
+|   |   |   |   other_parties = A103: good (12.0/3.0)
+|   |   |   job = A174: good (30.0/8.0)
+|   foreign_worker = A202: good (15.0/2.0)
+checking_status = A12
+|   credit_amount <= 9857
+|   |   savings_status = A61
+|   |   |   other_parties = A101
+|   |   |   |   duration <= 42
+|   |   |   |   |   personal_status = A91: bad (8.0/2.0)
+|   |   |   |   |   personal_status = A92
+|   |   |   |   |   |   purpose = A40: bad (5.0/1.0)
+|   |   |   |   |   |   purpose = A41: bad (1.0)
+|   |   |   |   |   |   purpose = A410: good (0.0)
+|   |   |   |   |   |   purpose = A42
+|   |   |   |   |   |   |   duration <= 10: bad (3.0)
+|   |   |   |   |   |   |   duration > 10
+|   |   |   |   |   |   |   |   duration <= 21: good (6.0/1.0)
+|   |   |   |   |   |   |   |   duration > 21: bad (2.0)
+|   |   |   |   |   |   purpose = A43: good (8.0/2.0)
+|   |   |   |   |   |   purpose = A44: good (0.0)
+|   |   |   |   |   |   purpose = A45: good (1.0)
+|   |   |   |   |   |   purpose = A46: good (4.0/2.0)
+|   |   |   |   |   |   purpose = A48: good (0.0)
+|   |   |   |   |   |   purpose = A49
+|   |   |   |   |   |   |   residence_since <= 2: good (3.0)
+|   |   |   |   |   |   |   residence_since > 2: bad (2.0)
+|   |   |   |   |   personal_status = A93: good (52.0/15.0)
+|   |   |   |   |   personal_status = A94
+|   |   |   |   |   |   duration <= 10: good (6.0)
+|   |   |   |   |   |   duration > 10: bad (10.0/3.0)
+|   |   |   |   duration > 42: bad (7.0)
+|   |   |   other_parties = A102: good (2.0)
+|   |   |   other_parties = A103
+|   |   |   |   purpose = A40: bad (2.0)
+|   |   |   |   purpose = A41: good (0.0)
+|   |   |   |   purpose = A410: good (0.0)
+|   |   |   |   purpose = A42: good (0.0)
+|   |   |   |   purpose = A43: good (18.0/1.0)
+|   |   |   |   purpose = A44: good (0.0)
+|   |   |   |   purpose = A45: good (0.0)
+|   |   |   |   purpose = A46: good (0.0)
+|   |   |   |   purpose = A48: good (0.0)
+|   |   |   |   purpose = A49: good (0.0)
+|   |   savings_status = A62
+|   |   |   purpose = A40: bad (15.0/5.0)
+|   |   |   purpose = A41: good (3.0)
+|   |   |   purpose = A410: good (1.0)
+|   |   |   purpose = A42: bad (4.0/1.0)
+|   |   |   purpose = A43: bad (8.0/2.0)
+|   |   |   purpose = A44: good (0.0)
+|   |   |   purpose = A45: good (2.0)
+|   |   |   purpose = A46: good (0.0)
+|   |   |   purpose = A48: good (0.0)
+|   |   |   purpose = A49
+|   |   |   |   housing = A151
+|   |   |   |   |   existing_credits <= 1: good (2.0)
+|   |   |   |   |   existing_credits > 1: bad (2.0)
+|   |   |   |   housing = A152: good (6.0)
+|   |   |   |   housing = A153: bad (1.0)
+|   |   savings_status = A63: good (11.0/3.0)
+|   |   savings_status = A64: good (13.0/3.0)
+|   |   savings_status = A65: good (41.0/5.0)
+|   credit_amount > 9857: bad (20.0/3.0)
+checking_status = A13: good (63.0/14.0)
+checking_status = A14: good (394.0/46.0)
+
+Number of Leaves  : 	98
+
+Size of the tree : 	135
+
+== NaiveBayes on 12 tuples
+Naive Bayes Classifier
+
+                   Class
+Attribute            Yes     No
+                  (0.43) (0.57)
+================================
+Income
+  High                4.0    2.0
+  Medium              2.0    4.0
+  Low                 2.0    4.0
+  [total]             8.0   10.0
+
+CreditHistory
+  Good                5.0    3.0
+  Poor                2.0    6.0
+  [total]             7.0    9.0
+
+Employment
+  Salaried            4.0    4.0
+  Self-employed       3.0    5.0
+  [total]             7.0    9.0
+
+
+== weka.classifiers.rules.JRip on credit-g (full data)
+JRIP rules:
+===========
+
+(checking_status = A11) and (duration >= 16) => class=bad (166.0/68.0)
+(checking_status = A12) and (duration >= 24) and (savings_status = A61) => class=bad (61.0/19.0)
+ => class=good (773.0/160.0)
+
+Number of Rules : 3
+
+== weka.classifiers.rules.PART on credit-g (full data)
+PART decision list
+------------------
+
+checking_status = A14 AND
+other_payment_plans = A143 AND
+credit_history = A34: good (134.0/3.0)
+
+checking_status = A14 AND
+existing_credits <= 1 AND
+other_payment_plans = A143 AND
+purpose = A43: good (49.0/2.0)
+
+checking_status = A14 AND
+foreign_worker = A201 AND
+employment = A74: good (35.0/2.0)
+
+foreign_worker = A202 AND
+personal_status = A93: good (21.0)
+
+checking_status = A14 AND
+purpose = A41 AND
+other_payment_plans = A143: good (23.0)
+
+duration <= 15 AND
+other_parties = A103: good (22.0/1.0)
+
+duration <= 11 AND
+credit_history = A34: good (29.0/3.0)
+
+checking_status = A13 AND
+num_dependents <= 1 AND
+property_magnitude = A123: good (20.0/3.0)
+
+checking_status = A14 AND
+property_magnitude = A121 AND
+other_payment_plans = A143 AND
+age > 23: good (25.0)
+
+savings_status = A64 AND
+property_magnitude = A121: good (10.0)
+
+savings_status = A63 AND
+employment = A75: good (13.0/1.0)
+
+credit_history = A30 AND
+housing = A151: bad (9.0)
+
+savings_status = A65 AND
+checking_status = A12 AND
+existing_credits > 1: good (9.0)
+
+checking_status = A13 AND
+num_dependents <= 1 AND
+property_magnitude = A122: good (9.0)
+
+installment_commitment <= 2 AND
+other_parties = A102 AND
+existing_credits > 1: bad (5.0)
+
+installment_commitment <= 2 AND
+credit_history = A33 AND
+existing_credits > 1 AND
+residence_since > 1: good (14.0/3.0)
+
+installment_commitment <= 2 AND
+credit_history = A33 AND
+existing_credits <= 1: good (9.0)
+
+duration > 30 AND
+savings_status = A62: bad (13.0/3.0)
+
+credit_history = A31 AND
+other_parties = A101 AND
+other_payment_plans = A141: bad (16.0/5.0)
+
+duration > 30 AND
+savings_status = A65 AND
+num_dependents > 1: good (5.0)
+
+duration > 30 AND
+credit_history = A33: bad (9.0)
+
+duration > 42 AND
+savings_status = A61 AND
+residence_since > 1: bad (28.0/3.0)
+
+purpose = A41 AND
+credit_amount <= 8133 AND
+existing_credits > 1: good (11.0)
+
+purpose = A41 AND
+credit_amount > 8133: bad (8.0/1.0)
+
+purpose = A41 AND
+employment = A73: good (7.0)
+
+purpose = A41: good (16.0/3.0)
+
+purpose = A42 AND
+other_payment_plans = A142: good (8.0)
+
+credit_history = A31 AND
+other_parties = A101 AND
+other_payment_plans = A143: bad (10.0)
+
+purpose = A49 AND
+residence_since <= 1: good (9.0)
+
+other_payment_plans = A142 AND
+purpose = A43 AND
+personal_status = A93: bad (6.0/1.0)
+
+purpose = A43 AND
+employment = A75 AND
+num_dependents <= 1: good (20.0/1.0)
+
+installment_commitment <= 3 AND
+purpose = A42 AND
+other_parties = A101 AND
+own_telephone = A192: good (19.0/3.0)
+
+checking_status = A14 AND
+savings_status = A65 AND
+personal_status = A93: good (11.0/1.0)
+
+checking_status = A12 AND
+employment = A74 AND
+personal_status = A93 AND
+residence_since > 2: good (9.0)
+
+purpose = A410: good (5.0/1.0)
+
+installment_commitment <= 2 AND
+foreign_worker = A201 AND
+credit_history = A32 AND
+residence_since > 1 AND
+other_parties = A101 AND
+other_payment_plans = A143 AND
+housing = A151 AND
+installment_commitment <= 1: good (9.0)
+
+housing = A151 AND
+other_payment_plans = A143 AND
+purpose = A40: bad (13.0/2.0)
+
+other_payment_plans = A142 AND
+property_magnitude = A122: bad (4.0/1.0)
+
+other_payment_plans = A141 AND
+other_parties = A101 AND
+housing = A151: bad (7.0/1.0)
+
+installment_commitment > 3 AND
+existing_credits <= 1 AND
+savings_status = A61 AND
+credit_history = A32 AND
+purpose = A40: bad (17.0/5.0)
+
+checking_status = A13 AND
+job = A172: bad (5.0)
+
+duration <= 15 AND
+property_magnitude = A121: good (38.0/8.0)
+
+foreign_worker = A201 AND
+property_magnitude = A121 AND
+other_payment_plans = A143 AND
+other_parties = A101 AND
+duration <= 33 AND
+own_telephone = A192: bad (7.0)
+
+foreign_worker = A201 AND
+checking_status = A11 AND
+purpose = A46: bad (9.0/1.0)
+
+foreign_worker = A201 AND
+purpose = A46 AND
+checking_status = A12: good (5.0)
+
+foreign_worker = A201 AND
+checking_status = A11 AND
+savings_status = A62 AND
+num_dependents <= 1: bad (6.0/1.0)
+
+foreign_worker = A201 AND
+savings_status = A64 AND
+checking_status = A11: good (4.0)
+
+foreign_worker = A201 AND
+savings_status = A62 AND
+personal_status = A93: good (10.0/2.0)
+
+foreign_worker = A201 AND
+existing_credits > 2: good (11.0/2.0)
+
+foreign_worker = A201 AND
+other_parties = A103 AND
+other_payment_plans = A143 AND
+existing_credits <= 1: good (6.0)
+
+foreign_worker = A201 AND
+num_dependents > 1 AND
+personal_status = A93 AND
+savings_status = A61 AND
+job = A173 AND
+duration > 16: bad (7.0)
+
+foreign_worker = A201 AND
+other_parties = A103 AND
+purpose = A43: bad (3.0)
+
+foreign_worker = A201 AND
+credit_history = A34 AND
+job = A172: bad (6.0)
+
+foreign_worker = A201 AND
+credit_history = A30 AND
+housing = A152: good (9.0/4.0)
+
+foreign_worker = A201 AND
+credit_history = A33 AND
+savings_status = A61 AND
+existing_credits <= 1: bad (5.0)
+
+foreign_worker = A201 AND
+credit_history = A33 AND
+num_dependents <= 1: good (5.0)
+
+foreign_worker = A201 AND
+credit_history = A33 AND
+job = A173: good (3.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A34 AND
+other_parties = A101 AND
+housing = A152 AND
+savings_status = A61 AND
+existing_credits > 1 AND
+installment_commitment > 2 AND
+credit_amount > 2181: bad (6.0)
+
+foreign_worker = A201 AND
+credit_history = A34 AND
+other_payment_plans = A141: bad (5.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A34 AND
+job = A173 AND
+employment = A73 AND
+residence_since <= 3: good (6.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A34: good (17.0/5.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+checking_status = A11 AND
+other_payment_plans = A143 AND
+job = A173 AND
+purpose = A40: bad (7.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+checking_status = A14 AND
+duration <= 30 AND
+residence_since > 1 AND
+own_telephone = A192: good (4.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+savings_status = A65: bad (18.0/6.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+checking_status = A11 AND
+other_payment_plans = A141 AND
+housing = A152: bad (3.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+checking_status = A11 AND
+other_payment_plans = A143 AND
+purpose = A43 AND
+job = A173: bad (7.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+existing_credits <= 1 AND
+purpose = A43 AND
+age > 22: good (11.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+existing_credits <= 1 AND
+installment_commitment > 3: bad (27.0/8.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+other_payment_plans = A141: good (5.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+own_telephone = A192 AND
+installment_commitment > 2: bad (4.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+existing_credits <= 1 AND
+employment = A73 AND
+personal_status = A92 AND
+credit_amount > 1474: good (5.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+purpose = A45: good (4.0/1.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+purpose = A42 AND
+property_magnitude = A121: good (3.0)
+
+foreign_worker = A201 AND
+credit_history = A32 AND
+housing = A152 AND
+property_magnitude = A122: bad (8.0/3.0)
+
+num_dependents <= 1 AND
+foreign_worker = A201 AND
+credit_history = A32 AND
+checking_status = A14: good (4.0)
+
+credit_history = A32 AND
+housing = A152 AND
+residence_since > 1: bad (8.0/2.0)
+
+existing_credits <= 1 AND
+num_dependents <= 1: good (8.0/2.0)
+
+: bad (5.0)
+
+Number of Rules  : 	78
+
+== Apriori CARs on 12 tuples (minsup 0.25, conf 0.7)
+
+Apriori
+=======
+
+Minimum support: 0.25 (3 instances)
+Minimum metric <confidence>: 0.7
+Number of cycles performed: 15
+
+Generated sets of large itemsets:
+
+Size of set of large itemsets L(1): 8
+
+Size of set of large itemsets L(2): 2
+
+Best rules found:
+
+ 1. CreditHistory=Good Employment=Salaried 3 ==> Approved=Yes 3    conf:(1)
+ 2. CreditHistory=Poor Employment=Salaried 3 ==> Approved=No 3    conf:(1)
+ 3. CreditHistory=Poor 6 ==> Approved=No 5    conf:(0.83)
+ 4. Income=High 4 ==> Approved=Yes 3    conf:(0.75)
+ 5. Income=Medium 4 ==> Approved=No 3    conf:(0.75)
+ 6. Income=Low 4 ==> Approved=No 3    conf:(0.75)
+
